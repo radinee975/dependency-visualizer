@@ -1,6 +1,6 @@
-package_name: nginx
+package_name: libcrypt1
 repository_url: test_repo.txt
 test_mode: true
-package_version: "1.18.0"
+package_version: "1:4.4.10"
 ascii_tree: false
-filter_substring: "crypt"
+filter_substring: "zzz"

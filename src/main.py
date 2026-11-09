@@ -120,6 +120,35 @@ def build_dependency_graph(packages, package_name, filter_substring, visited=Non
     
     return graph
 
+def find_reverse_dependencies(packages, target_package, filter_substring):
+    """Находит все пакеты, которые зависят от target_package (прямо или косвенно)."""
+    reverse_graph = {}
+    
+    # Строим обратный граф: для каждого пакета находим, кто на него ссылается
+    for pkg_name, pkg_data in packages.items():
+        deps = pkg_data["depends"]
+        for dep in deps:
+            if filter_substring and filter_substring in dep:
+                continue
+            if dep not in reverse_graph:
+                reverse_graph[dep] = []
+            reverse_graph[dep].append(pkg_name)
+    
+    # Теперь рекурсивно ищем все пакеты, которые зависят от target_package
+    result = set()
+    visited = set()
+    
+    def dfs(node):
+        if node in visited:
+            return
+        visited.add(node)
+        for parent in reverse_graph.get(node, []):
+            result.add(parent)
+            dfs(parent)
+    
+    dfs(target_package)
+    return sorted(result)
+
 def main():
     config = load_config()
     print("Параметры конфигурации:")
@@ -150,6 +179,15 @@ def main():
     for pkg, deps in graph.items():
         deps_str = ", ".join(deps) if deps else "(нет)"
         print(f"  {pkg} -> {deps_str}")
+    
+    print("\n--- Этап 4: Обратные зависимости ---")
+    reverse_deps = find_reverse_dependencies(packages, target, config["filter_substring"])
+    if not reverse_deps:
+        print(f"Пакеты, зависящие от {target}: (нет)")
+    else:
+        print(f"Пакеты, зависящие от {target}:")
+        for pkg in reverse_deps:
+            print(f"  - {pkg}")
 
 if __name__ == "__main__":
     main()
