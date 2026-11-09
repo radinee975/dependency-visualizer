@@ -45,16 +45,20 @@ run.bat (для Windows)
 ## 4. Примеры использования
 
 Пример конфигурации:
+```yaml
 package_name: nginx
 repository_url: test_repo.txt
 test_mode: true
 package_version: "1.18.0"
 ascii_tree: true
 filter_substring: "zzz"
+```
 
 Пример вывода ASCII-дерева:
+```text
 nginx
     ├── libc6
     │   └── libcrypt1
     ├── libpcre3
     └── zlib1g
+```
