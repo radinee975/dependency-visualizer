@@ -1,0 +1,15 @@
+Package: nginx
+Version: 1.18.0
+Depends: libc6 (>= 2.14), libpcre3, zlib1g
+
+Package: libc6
+Version: 2.31
+Depends: libcrypt1
+
+Package: libpcre3
+Version: 2:8.39
+Depends: 
+
+Package: zlib1g
+Version: 1:1.2.11
+Depends: 

@@ -1,6 +1,6 @@
 ﻿package_name: nginx
-repository_url: https://example.com/ubuntu
-test_mode: false
+repository_url: test_repo.txt
+test_mode: true
 package_version: "1.18.0"
-ascii_tree: true
+ascii_tree: false
 filter_substring: "lib"
