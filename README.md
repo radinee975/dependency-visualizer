@@ -38,9 +38,7 @@ pip install pyyaml requests
 
 Запуск:
 python src/main.py
-или через скрипты:
-./run.sh (для Linux/macOS)
-run.bat (для Windows)
+run.bat 
 
 ## 4. Примеры использования
 
