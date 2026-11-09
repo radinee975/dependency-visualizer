@@ -6,6 +6,10 @@ Package: libc6
 Version: 2.31
 Depends: libcrypt1
 
+Package: libcrypt1
+Version: 1:4.4.10
+Depends: 
+
 Package: libpcre3
 Version: 2:8.39
 Depends: 

@@ -1,6 +1,6 @@
-﻿package_name: nginx
+package_name: nginx
 repository_url: test_repo.txt
 test_mode: true
 package_version: "1.18.0"
 ascii_tree: false
-filter_substring: "lib"
+filter_substring: "crypt"
