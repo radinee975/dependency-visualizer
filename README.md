@@ -60,3 +60,4 @@ nginx
 ├── libpcre3
 └── zlib1g
 
+"All tests passed" 
