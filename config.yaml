@@ -1,6 +1,6 @@
-package_name: nginx
-repository_url: test_repo.txt
-test_mode: true
-package_version: "1.18.0"
+package_name: curl
+repository_url: http://archive.ubuntu.com/ubuntu/dists/jammy/main/binary-amd64/Packages.gz
+test_mode: false
+package_version: "7.81.0"
 ascii_tree: true
-filter_substring: "zzz"
+filter_substring: ""
